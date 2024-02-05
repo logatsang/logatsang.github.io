@@ -1,20 +1,22 @@
 import React from "react";
-import { useTranslation } from "react-i18next";
+
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { LandingPage } from "./pages/LandingPage";
+import { CVPage } from "./pages/CVPage";
+import { Layout } from "./Layout";
 
 import "./App.css";
 
-import DefaultNavbar from "./components/DefaultNavbar.js";
-
 function App() {
-    const { t } = useTranslation();
-
     return (
-        <div className="App" data-bs-theme="dark">
-            <DefaultNavbar />
-            <div className="p-5">
-                <h1>{t("greeting")}</h1>
-            </div>
-        </div>
+        <Router>
+            <Routes>
+                <Route path="/" element={ <Layout /> }>
+                    <Route index element={<LandingPage />} />
+                    <Route path="cv" element={ <CVPage /> } />
+                </Route>
+            </Routes>
+        </Router>
     );
 }
 

@@ -16,7 +16,7 @@ const LanguageSelector = () => {
     };
 
     return (
-        <NavDropdown title={<span> <Globe2 style={{verticalAlign: -2.5 + "px"}} /> {t("languageName")}</span>} onSelect={chooseLanguage} id="basic-nav-dropdown">
+        <NavDropdown title={<span> <Globe2 style={{verticalAlign: -2.5 + "px"}} /> {t("languageName")}</span>} onSelect={chooseLanguage}>
             <NavDropdown.Item eventKey="en">English</NavDropdown.Item>
             <NavDropdown.Item eventKey="jp">日本語</NavDropdown.Item>
         </NavDropdown>
